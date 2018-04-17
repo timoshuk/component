@@ -15,6 +15,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
 var htmlmin = require('gulp-htmlmin');
 var babel = require("gulp-babel");
+var wait = require('gulp-wait');
 
 var paths = {
     html: ['app/*.html'],
@@ -32,13 +33,14 @@ gulp.task('css', function () {
         .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('app/css'))
+        .pipe(wait(1500))
         .pipe(browserSync.reload({
             stream: true
         }));
 }); //Sass to css task
 
-gulp.task('js', function(){
-    return gulp.src(paths.scripts).pipe(babel({presets: ['es2015']})).pipe(gulp.dest('app/js')).pipe(browserSync.reload({
+gulp.task('js', function () {
+    return gulp.src(paths.scripts).pipe(babel({ presets: ['es2015'] })).pipe(gulp.dest('app/js')).pipe(browserSync.reload({
         stream: true
     }));
 });
@@ -69,8 +71,8 @@ gulp.task('fonts', function () {
 }); // Copy fonts to folder dist
 
 gulp.task('clean:dist', function () {
-        return del.sync('dist');
-    }); // clear dist
+    return del.sync('dist');
+}); // clear dist
 
 
 
@@ -85,17 +87,17 @@ gulp.task('browserSync', function () {
     });
 }); //browserSync
 
-gulp.task('minhtml', function() {
-  return gulp.src('dist/**/*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('dist'));
+gulp.task('minhtml', function () {
+    return gulp.src('dist/**/*.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', function (callback) {
-        runSequence('clean:dist', ['css', 'useref', 'images', 'fonts'], 'minhtml',
-            callback
-        )
-    }) //build
+    runSequence('clean:dist', ['css', 'useref', 'images', 'fonts'], 'minhtml',
+        callback
+    )
+}) //build
 
 
 

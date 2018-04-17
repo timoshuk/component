@@ -304,4 +304,15 @@ template {
 html {
   box-sizing: border-box; }
 
+.hidden {
+  display: none; }
+
+.main-nav__lists {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: greenyellow; }
+
 /*# sourceMappingURL=styles.css.map */
