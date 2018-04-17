@@ -313,6 +313,11 @@ html {
   left: 0px;
   width: 100vw;
   height: 100vh;
+  padding: 50px 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: greenyellow; }
 
 /*# sourceMappingURL=styles.css.map */
