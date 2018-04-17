@@ -1,0 +1,3 @@
+ncu
+ncu -a
+npm i
