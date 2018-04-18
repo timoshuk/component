@@ -28,16 +28,17 @@ var paths = {
 //Tasks
 gulp.task('css', function () {
     return gulp.src(paths.scss) // Gets all files ending with .scss in app/scss
+        .pipe(wait(2000))
         .pipe(sass())
         .pipe(sourcemaps.init())
         .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
-        .pipe(wait(1500))
+
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(notify('Done! master zooboole.'));
+        .pipe(notify('Done!'));
 }); //Sass to css task
 
 gulp.task('js', function () {

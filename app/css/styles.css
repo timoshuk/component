@@ -299,7 +299,9 @@ template {
   display: none; }
 
 *, *:before, *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
 
 html {
   box-sizing: border-box; }
@@ -307,10 +309,27 @@ html {
 .hidden {
   display: none; }
 
+.main-nav__btn {
+  display: inline-block;
+  z-index: 1500;
+  position: fixed;
+  top: 30px;
+  right: 20px; }
+
+.main-nav__line {
+  width: 40px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+  transition: all .5s; }
+
+.main-nav--line-1 {
+  -webkit-transform: traslateY(8px) rotate(45deg);
+          transform: traslateY(8px) rotate(45deg); }
+
 .main-nav__lists {
-  position: absolute;
+  position: fixed;
   top: 0px;
-  left: 0px;
+  left: 200vw;
   width: 100vw;
   height: 100vh;
   padding: 50px 20px;
@@ -318,6 +337,26 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: greenyellow; }
+  background-color: rgba(0, 0, 0, 0.8); }
+
+.main-nav__link {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 3rem;
+  transition: all .5s;
+  line-height: 1.2; }
+
+.main-nav--link-hover:hover {
+  color: lightpink;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1); }
+
+.main-nav--link-hover:active {
+  -webkit-transform: scale(1);
+          transform: scale(1); }
+
+.main-nav--active {
+  color: lightgreen; }
 
 /*# sourceMappingURL=styles.css.map */
