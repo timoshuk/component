@@ -343,7 +343,7 @@ html {
   z-index: 1400;
   opacity: 0;
   top: 0px;
-  left: 200vw;
+  left: 150vw;
   width: 100vw;
   height: 100vh;
   padding: 50px 20px;
@@ -352,7 +352,7 @@ html {
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
-  transition: all .5s; }
+  transition: all .8s; }
 
 .main-nav__link {
   display: block;
@@ -361,15 +361,13 @@ html {
   font-size: 3rem;
   transition: all .5s;
   line-height: 1.2; }
-
-.main-nav--link-hover:hover {
-  color: lightpink;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1); }
-
-.main-nav--link-hover:active {
-  -webkit-transform: scale(1);
-          transform: scale(1); }
+  .main-nav__link:hover {
+    color: lightpink;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+  .main-nav__link:active {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
 
 .main-nav--active {
   color: lightgreen; }
