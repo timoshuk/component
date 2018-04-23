@@ -54,17 +54,12 @@ window.onload = () => {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        dotsClass: 'slick__dots',
+        dotsClass: 'slider__dots',
 
         responsive: [{
             breakpoint: 650,
             settings: {
                 slidesToShow: 3,
-                arrows: true,
-                appendArrows: arrowsContainer,
-                dots: false,
-
-
             }
         }]
 

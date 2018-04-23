@@ -1,43 +1,47 @@
-.slider{
+.slider {
     position: relative;
 }
 
-.slider__item{
+.slider__item {
     margin: 10px 5px;
     padding: 5px 10px;
     background: turquoise;
-    box-shadow: 0 0 5px rgba(0,0,0, .9);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .9);
 }
 
-.slick__header{
+.slider__header {
     font-size: 1.5rem;
     font-weight: 800;
     line-height: 1.2;
     margin: 5px;
 }
 
-.slick__text{
+.slider__text {
     font-size: 1rem;
     text-align: justify;
 }
 
-.slick__dots{
+.slider__dots {
     display: flex;
     justify-content: center;
-    li{
+    li {
         list-style: none;
-        &.slick-active button{
+        &.slick-active button {
             background-color: red;
             color: red;
         }
-        button{
+        button {
             color: white;
             background-color: white;
-            border: 1px solid red; 
+            border: 1px solid red;
             border-radius: 40px;
             width: 20px;
             height: 20px;
             margin: 5px;
         }
     }
+}
+
+.slider__arrows {
+    text-align: center;
 }

@@ -395,25 +395,25 @@ html {
   background: turquoise;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.9); }
 
-.slick__header {
+.slider__header {
   font-size: 1.5rem;
   font-weight: 800;
   line-height: 1.2;
   margin: 5px; }
 
-.slick__text {
+.slider__text {
   font-size: 1rem;
   text-align: justify; }
 
-.slick__dots {
+.slider__dots {
   display: flex;
   justify-content: center; }
-  .slick__dots li {
+  .slider__dots li {
     list-style: none; }
-    .slick__dots li.slick-active button {
+    .slider__dots li.slick-active button {
       background-color: red;
       color: red; }
-    .slick__dots li button {
+    .slider__dots li button {
       color: white;
       background-color: white;
       border: 1px solid red;
@@ -421,5 +421,8 @@ html {
       width: 20px;
       height: 20px;
       margin: 5px; }
+
+.slider__arrows {
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
