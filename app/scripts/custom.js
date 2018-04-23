@@ -26,17 +26,17 @@ window.onload = () => {
             navBtnLine2.classList.toggle('main-nav--line-2');
             navBtnLine3.classList.toggle('main-nav--line-3');
             mainMenu.classList.toggle('show');
-            
 
-            if(targetElement.classList.contains('main-nav--active')){
+
+            if (targetElement.classList.contains('main-nav--active')) {
                 return;
-            }else{
-                for (let k = 0; k < navLink.length; k++){
+            } else {
+                for (let k = 0; k < navLink.length; k++) {
                     navLink[k].classList.remove('main-nav--active');
                 }
                 targetElement.classList.add('main-nav--active');
             }
-            
+
         });
     }
     /******** End main-nav ***********/
@@ -44,13 +44,30 @@ window.onload = () => {
     /*****************
         Slick Slider
     ******************/
+    let arrowsContainer = $('.slider__arrows');
+    $('.slider__slick').slick({
+        mobileFirst: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        dotsClass: 'slick__dots',
 
-   $('.slick').slick({
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    
-  });
-                  
+        responsive: [{
+            breakpoint: 650,
+            settings: {
+                slidesToShow: 3,
+                arrows: true,
+                appendArrows: arrowsContainer,
+                dots: false,
+
+
+            }
+        }]
+
+    });
+
 };

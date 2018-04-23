@@ -16,7 +16,7 @@ var autoprefixer = require('autoprefixer');
 var htmlmin = require('gulp-htmlmin');
 var babel = require("gulp-babel");
 var plumber = require('gulp-plumber');
-//var wait = require('gulp-wait');
+var wait = require('gulp-wait');
 
 
 var paths = {
@@ -30,7 +30,7 @@ var paths = {
 //Tasks
 gulp.task('css', function () {
     return gulp.src(paths.scss) // Gets all files ending with .scss in app/scss
-        //.pipe(wait(500))
+        .pipe(wait(500))
         .pipe(plumber())
         .pipe(sass())
         .pipe(sourcemaps.init())
@@ -45,11 +45,14 @@ gulp.task('css', function () {
 }); //Sass to css task
 
 gulp.task('js', function () {
-    return gulp.src(paths.scripts).pipe(babel({
-        presets: ['es2015']
-    })).pipe(gulp.dest('app/js')).pipe(browserSync.reload({
-        stream: true
-    }));
+    return gulp.src(paths.scripts)
+        .pipe(wait(500))
+        .pipe(plumber())
+        .pipe(babel({
+            presets: ['es2015']
+        })).pipe(gulp.dest('app/js')).pipe(browserSync.reload({
+            stream: true
+        }));
 });
 
 

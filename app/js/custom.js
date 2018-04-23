@@ -44,12 +44,28 @@ window.onload = function () {
     /*****************
         Slick Slider
     ******************/
-
-    $('.slick').slick({
-        infinite: true,
-        speed: 300,
+    var arrowsContainer = $('.slider__arrows');
+    $('.slider__slick').slick({
+        mobileFirst: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 700,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        dotsClass: 'slick__dots',
+
+        responsive: [{
+            breakpoint: 650,
+            settings: {
+                slidesToShow: 3,
+                arrows: true,
+                appendArrows: arrowsContainer,
+                dots: false
+
+            }
+        }]
 
     });
 };
