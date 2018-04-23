@@ -21,7 +21,7 @@ window.onload = () => {
 
     for (let i = 0; i < navLink.length; i++) {
         navLink[i].addEventListener('click', (e) => {
-            let targetElement = event.target || event.srcElement;
+            let targetElement = e.target || e.srcElement;
             navBtnLine1.classList.toggle('main-nav--line-1');
             navBtnLine2.classList.toggle('main-nav--line-2');
             navBtnLine3.classList.toggle('main-nav--line-3');

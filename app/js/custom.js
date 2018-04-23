@@ -23,7 +23,7 @@ window.onload = function () {
 
     for (var i = 0; i < navLink.length; i++) {
         navLink[i].addEventListener('click', function (e) {
-            var targetElement = event.target || event.srcElement;
+            var targetElement = e.target || e.srcElement;
             navBtnLine1.classList.toggle('main-nav--line-1');
             navBtnLine2.classList.toggle('main-nav--line-2');
             navBtnLine3.classList.toggle('main-nav--line-3');
