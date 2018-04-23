@@ -39,4 +39,17 @@ window.onload = function () {
             }
         });
     }
+    /******** End main-nav ***********/
+
+    /*****************
+        Slick Slider
+    ******************/
+
+    $('.slick').slick({
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
+
+    });
 };
