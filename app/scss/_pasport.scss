@@ -1,0 +1,27 @@
+.pasport {
+    position: relative;
+    top: -55px;
+    z-index: 1400;
+    padding: 200px;
+}
+
+.pasport__button{
+    position: fixed;
+    left: -250px;
+    top: 100px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
+    background-color: chartreuse;
+    padding: 10px 50px 10px 20px;
+    border-radius: 3px;
+    ::after{
+        position: absolute;
+        right: 0;
+        top: 0;
+        content: '>';
+        color: black;
+    }
+}

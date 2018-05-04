@@ -432,7 +432,9 @@ html {
           clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   padding: 30px 0 70px 0;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  z-index: 1500;
+  position: relative; }
 
 .tariff__item {
   margin: 10px;
@@ -473,5 +475,30 @@ html {
     background: url(/images/tariff/eco-fuel.svg);
     background-size: cover;
     color: tomato; }
+
+.pasport {
+  position: relative;
+  top: -55px;
+  z-index: 1400;
+  padding: 200px; }
+
+.pasport__button {
+  position: fixed;
+  left: -250px;
+  top: 100px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: black;
+  background-color: chartreuse;
+  padding: 10px 50px 10px 20px;
+  border-radius: 3px; }
+  .pasport__button ::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '>';
+    color: black; }
 
 /*# sourceMappingURL=styles.css.map */
