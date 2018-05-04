@@ -425,4 +425,53 @@ html {
 .slider__arrows {
   text-align: center; }
 
+.tariff {
+  background: url(/images/tariff/background.jpg);
+  background-attachment: fixed;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  padding: 30px 0 70px 0;
+  display: flex;
+  justify-content: center; }
+
+.tariff__item {
+  margin: 10px;
+  width: 300px;
+  flex-shrink: 0;
+  background-color: white;
+  border: 1px solid rgba(24, 22, 22, 0.5);
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.7); }
+
+.tariff__title {
+  background-color: red;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 20px 5px;
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800; }
+
+.tariff__list {
+  padding: 5px 10px 30px 40px;
+  list-style: none; }
+
+.tariff__list-item {
+  position: relative;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  font-weight: 600;
+  color: black; }
+  .tariff__list-item::before {
+    position: absolute;
+    content: '';
+    left: -25px;
+    top: .4em;
+    width: 20px;
+    height: 20px;
+    background: url(/images/tariff/eco-fuel.svg);
+    background-size: cover;
+    color: tomato; }
+
 /*# sourceMappingURL=styles.css.map */
