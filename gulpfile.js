@@ -17,6 +17,9 @@ var htmlmin = require('gulp-htmlmin');
 var babel = require("gulp-babel");
 var plumber = require('gulp-plumber');
 var wait = require('gulp-wait');
+var webp = require("gulp-webp");
+var svgstore = require("gulp-svgstore");
+
 
 
 var paths = {
@@ -29,19 +32,20 @@ var paths = {
 
 //Tasks
 gulp.task('css', function () {
-    return gulp.src(paths.scss) // Gets all files ending with .scss in app/scss
+    gulp.src(paths.scss) // Gets all files ending with .scss in app/scss
         .pipe(wait(500))
         .pipe(plumber())
         .pipe(sass())
         .pipe(sourcemaps.init())
-        .pipe(postcss([autoprefixer()]))
+        .pipe(postcss([
+            autoprefixer()
+        ]))
         .pipe(sourcemaps.write('.'))
-
         .pipe(gulp.dest('app/css'))
+        .pipe(notify('Done!'))
         .pipe(browserSync.reload({
             stream: true
-        }))
-        .pipe(notify('Done!'));
+        }));
 }); //Sass to css task
 
 gulp.task('js', function () {
@@ -68,12 +72,33 @@ gulp.task('useref', function () {
 gulp.task('images', function () {
     return gulp.src(paths.image)
         // Caching images that ran through imagemin
-        .pipe(cache(imagemin({
-            interlaced: true
-        })))
+        .pipe(cache(imagemin([
+            imagemin.optipng({
+                optimizationLevel: 3
+            }),
+            imagemin.jpegtran({
+                progressive: true
+            }), imagemin.svgo()
+        ])))
         .pipe(gulp.dest('dist/images'));
 }); // min image
 
+gulp.task("webp", function () {
+    return gulp.src("app/images/**/*.{png,jpg}")
+        .pipe(webp({
+            quality: 90
+        }))
+        .pipe(gulp.dest("dist/images"));
+}); // Create WebP image
+
+gulp.task("sprite", function () {
+    return gulp.src("app/images/icon-*.svg")
+        .pipe(svgstore({
+            inlineSvg: true
+        }))
+        .pipe(rename("sprite.svg"))
+        .pipe(gulp.dest("dist/images"));
+});
 
 gulp.task('fonts', function () {
     return gulp.src(paths.fonts)
@@ -86,7 +111,7 @@ gulp.task('clean:dist', function () {
 
 
 
-gulp.task('browserSync', function () {
+gulp.task('browserSync', ['css'], function () {
     browserSync.init({
         server: {
             baseDir: 'app'
