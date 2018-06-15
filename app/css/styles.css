@@ -632,4 +632,8 @@ html {
   text-align: center;
   text-transform: uppercase; }
 
+.id-cart-wrapper {
+  height: 100vh;
+  background-color: #122023; }
+
 /*# sourceMappingURL=styles.css.map */
