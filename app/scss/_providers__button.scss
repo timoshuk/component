@@ -1,0 +1,15 @@
+.providers__button-container{
+    min-height: 100vh;
+}
+
+.providers__button{
+    display: inline-block;
+    width: 200px;
+    height: 220px;
+    font-size: 1px;
+    color: transparent;
+    text-decoration: none;
+    background-image: url(../images/providers_button/LogoKomitet_2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
