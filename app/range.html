@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#00ffbf">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#00ffbf">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#00ffbf">
+
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+    <link rel="icon" href="images/unnamed.png" type="image/png">
+
+    <title>RangeForm</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <form action="/" method="POST" class="range-form">
+            <div class="range-form__item-container">
+                <div class="range-form__custom-range">
+                    <div class="range-form__marker"></div>
+                </div>
+                <label class="range-form__label">
+                    <input min="0" max="100" value="20" type="range" name="range" class="range-form__input" id="range-form__input-first"><span>20</span></label>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/range.js"></script>
+</body>
+
+</html>
